@@ -1,0 +1,18 @@
+{
+  "profiles": {
+    "O365HealthMonitor": {
+      "commandName": "Project",
+      "environmentVariables": {
+        
+        //set environment variables here for local execution
+        "ClientSecret": "",
+        "Domain": "",
+        "ClientId": "",
+       
+        "TeamsWebhookURL": "",
+        "Env": "Dev",
+        "StorageConnectionString": ""
+      }
+    }
+  }
+}

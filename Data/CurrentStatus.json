@@ -1,0 +1,831 @@
+{
+  "value": [
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Sign in",
+          "FeatureName": "signin",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Sign up and Administration",
+          "FeatureName": "admin",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Organization Access",
+          "FeatureName": "orgaccess",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Organization performance",
+          "FeatureName": "orgperf",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Components/Features",
+          "FeatureName": "comp",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "DynamicsAX",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "DynamicsAX",
+      "WorkloadDisplayName": "Dynamics 365 for Operations",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Sign In",
+          "FeatureName": "signin",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Sign up and administration",
+          "FeatureName": "admin",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Organization access",
+          "FeatureName": "orgaccess",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Organization performance",
+          "FeatureName": "orgperf",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Components/Features",
+          "FeatureName": "crmcomponents",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "DynamicsCRM",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "DynamicsCRM",
+      "WorkloadDisplayName": "Dynamics 365",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Networking Issues",
+          "FeatureName": "Networking Issues",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Sign-in",
+          "FeatureName": "Signin",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "E-Mail and calendar access",
+          "FeatureName": "Access",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "E-Mail timely delivery",
+          "FeatureName": "Delivery",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Management and Provisioning",
+          "FeatureName": "Provisioning",
+          "FeatureServiceStatus": "ServiceRestored",
+          "FeatureServiceStatusDisplayName": "Service restored"
+        },
+        {
+          "FeatureDisplayName": "Voice mail",
+          "FeatureName": "UnifiedMessaging",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "Exchange",
+      "IncidentIds": [
+        "EX198043"
+      ],
+      "Status": "ServiceRestored",
+      "StatusDisplayName": "Service restored",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "Exchange",
+      "WorkloadDisplayName": "Exchange Online",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Service",
+          "FeatureName": "service",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Form functionality",
+          "FeatureName": "functionality",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Integration",
+          "FeatureName": "integration",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "Forms",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "Forms",
+      "WorkloadDisplayName": "Microsoft Forms",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Kaizala Messaging",
+          "FeatureName": "kaizalamessaging",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Kaizala Management Portal",
+          "FeatureName": "kaizalaportal",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "kaizalamessagingservices",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "kaizalamessagingservices",
+      "WorkloadDisplayName": "Microsoft Kaizala",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Audio and Video",
+          "FeatureName": "AudioVideo",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Federation",
+          "FeatureName": "Federation",
+          "FeatureServiceStatus": "ServiceDegradation",
+          "FeatureServiceStatusDisplayName": "Service degradation"
+        },
+        {
+          "FeatureDisplayName": "Management and Provisioning",
+          "FeatureName": "ManagementandProvisioning",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Sign-In",
+          "FeatureName": "Sign-In",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "All Features",
+          "FeatureName": "All",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Dial-In Conferencing",
+          "FeatureName": "DialInConferencing",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Online Meetings",
+          "FeatureName": "OnlineMeetings",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Instant Messaging",
+          "FeatureName": "InstantMessaging",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Presence",
+          "FeatureName": "Presence",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Mobility",
+          "FeatureName": "Mobility",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Cloud PBX",
+          "FeatureName": "CloudPBX",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "PSTN Calling",
+          "FeatureName": "PSTNCalling",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Meeting Broadcast",
+          "FeatureName": "MeetingBroadcast",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "Lync",
+      "IncidentIds": [
+        "LY197383"
+      ],
+      "Status": "ServiceDegradation",
+      "StatusDisplayName": "Service degradation",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "Lync",
+      "WorkloadDisplayName": "Skype for Business",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Service and web access issues",
+          "FeatureName": "Service",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "MicrosoftFlow",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "MicrosoftFlow",
+      "WorkloadDisplayName": "Microsoft Flow",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Service and web access issues",
+          "FeatureName": "Service",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "MicrosoftFlowM365",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "MicrosoftFlowM365",
+      "WorkloadDisplayName": "Flow in Microsoft 365",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Teams Components",
+          "FeatureName": "TeamsComponents",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "microsoftteams",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "microsoftteams",
+      "WorkloadDisplayName": "Microsoft Teams",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Mobile Device Management",
+          "FeatureName": "MobileDeviceManagement",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "MobileDeviceManagement",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "MobileDeviceManagement",
+      "WorkloadDisplayName": "Mobile Device Management for Office 365",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Office Client issues",
+          "FeatureName": "OfficeClient",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "O365Client",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "O365Client",
+      "WorkloadDisplayName": "Office Client Applications",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Excel Online",
+          "FeatureName": "excelonline",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "OneNote Online",
+          "FeatureName": "onenoteonline",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "PowerPoint Online",
+          "FeatureName": "powerpointonline",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Word Online",
+          "FeatureName": "wordonline",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Visio Online",
+          "FeatureName": "visioonline",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "officeonline",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "officeonline",
+      "WorkloadDisplayName": "Office for the web",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "OneDrive for Business",
+          "FeatureName": "OneDrive for Business",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "OneDriveForBusiness",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "OneDriveForBusiness",
+      "WorkloadDisplayName": "OneDrive for Business",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Sign-In",
+          "FeatureName": "authentication",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Administration",
+          "FeatureName": "administration",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "OrgLiveID",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "OrgLiveID",
+      "WorkloadDisplayName": "Identity Service",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Portal",
+          "FeatureName": "Portal",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Administration",
+          "FeatureName": "Administration",
+          "FeatureServiceStatus": "RestoringService",
+          "FeatureServiceStatusDisplayName": "Restoring service"
+        },
+        {
+          "FeatureDisplayName": "Purchase and Billing",
+          "FeatureName": "PurchaseAndBilling",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "OSDPPlatform",
+      "IncidentIds": [
+        "MO198210"
+      ],
+      "Status": "RestoringService",
+      "StatusDisplayName": "Restoring service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "OSDPPlatform",
+      "WorkloadDisplayName": "Office 365 Portal",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Licensing and Renewal",
+          "FeatureName": "LicensingRenewal",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Network Availability",
+          "FeatureName": "networking",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Office Professional Plus Download",
+          "FeatureName": "officedownload",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "OSub",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "OSub",
+      "WorkloadDisplayName": "Office Subscription",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Planner",
+          "FeatureName": "Planner",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "Planner",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "Planner",
+      "WorkloadDisplayName": "Planner",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Service and web access issues",
+          "FeatureName": "Service",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "PowerApps",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "PowerApps",
+      "WorkloadDisplayName": "PowerApps",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Service and web access issues",
+          "FeatureName": "Service",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "PowerAppsM365",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "PowerAppsM365",
+      "WorkloadDisplayName": "PowerApps in Microsoft 365",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "PowerBI.com",
+          "FeatureName": "PowerBI",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "PowerBIcom",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "PowerBIcom",
+      "WorkloadDisplayName": "Power BI",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Azure RMS Available",
+          "FeatureName": "RMS",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "RMS",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "RMS",
+      "WorkloadDisplayName": "Azure Information Protection",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Provisioning",
+          "FeatureName": "provisioning",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "SharePoint Features",
+          "FeatureName": "spofeatures",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Tenant Admin",
+          "FeatureName": "tenantadmin",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Search and Delve",
+          "FeatureName": "search",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Custom Solutions and Workflows",
+          "FeatureName": "customsolutionsworkflows",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Project Online",
+          "FeatureName": "projectonline",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Office Web Apps",
+          "FeatureName": "officewebapps",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "SP Designer",
+          "FeatureName": "spdesigner",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Access Services",
+          "FeatureName": "accessservices",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "InfoPath Online",
+          "FeatureName": "infopathonline",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "SharePoint",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "SharePoint",
+      "WorkloadDisplayName": "SharePoint Online",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Sign in",
+          "FeatureName": "SignIn",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Sign up and Administration",
+          "FeatureName": "admin",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Solution Access",
+          "FeatureName": "solaccess",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Solution Performance",
+          "FeatureName": "solperf",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Components/Features",
+          "FeatureName": "components",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Social Data Acquisition",
+          "FeatureName": "data",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "SocialEngagement",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "SocialEngagement",
+      "WorkloadDisplayName": "Social Engagement",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Service and web access issues",
+          "FeatureName": "Service",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Web client issues",
+          "FeatureName": "Web",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "Android client issues",
+          "FeatureName": "Android",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        },
+        {
+          "FeatureDisplayName": "iOS client issues",
+          "FeatureName": "iOS",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "StaffHub",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "StaffHub",
+      "WorkloadDisplayName": "Microsoft StaffHub",
+      "BatchNumber": 0
+    },
+    {
+      "FeatureStatus": [
+        {
+          "FeatureDisplayName": "Yammer Components",
+          "FeatureName": "yammerfeatures",
+          "FeatureServiceStatus": "ServiceOperational",
+          "FeatureServiceStatusDisplayName": "Normal service"
+        }
+      ],
+      "id": "00000000-0000-0000-0000-000000000000",
+      "Id": "yammer",
+      "IncidentIds": [
+      ],
+      "Status": "ServiceOperational",
+      "StatusDisplayName": "Normal service",
+      "StatusTime": "2019-12-16T01:00:37.5811228Z",
+      "Workload": "yammer",
+      "WorkloadDisplayName": "Yammer Enterprise",
+      "BatchNumber": 0
+    }
+  ]
+}
