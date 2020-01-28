@@ -1,6 +1,15 @@
-# O365HealthMonitor
- 
+# O365 Health Monitor
+
+Updates : Health notification can now be sent to your mailbox 
+https://docs.microsoft.com/en-us/microsoft-365/enterprise/view-service-health?view=o365-worldwide
+
+#22/01/2021
+Parametrised TimerSchedule - pass in Chron format. Eg. 0 */10 * * * * (for 10 minute frequency)
+
+Parametrised TeamsWebhookPIRURL - to post PIR into teams channel. Can be same as TeamsWebhookURL
+
 This sample Azure Function App, monitores for O365 service degradation and notifies to a Teams Channel.
+## --------------------
 
 Application queries O365 service management API.
 https://docs.microsoft.com/en-us/office/office-365-management-api/office-365-service-communications-api-reference 
@@ -37,3 +46,6 @@ https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors
 
 ## -- Teams Notification --
 ![TeamsNotification](https://user-images.githubusercontent.com/20592381/72154462-b15e8100-33d6-11ea-8e30-639323679542.jpg) 
+
+## -- Teams Notification PIR --
+![PIR](https://user-images.githubusercontent.com/20592381/105458493-ca358e00-5cdc-11eb-9cff-214091457f9f.PNG)

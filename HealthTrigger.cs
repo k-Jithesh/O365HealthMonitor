@@ -44,6 +44,10 @@ namespace O365HealthMonitor
 
         private static readonly string teamsWebhook = Environment.GetEnvironmentVariable("TeamsWebhookURL");
 
+        private static readonly string teamsWebhookPIR = Environment.GetEnvironmentVariable("TeamsWebhookPIRURL");
+
+        private static readonly string teamsPlannerWebhook = "";
+
         private static readonly string stgAccountConnection = Environment.GetEnvironmentVariable("StorageConnectionString");
 
         private static ILogger logger = null;
@@ -107,7 +111,7 @@ namespace O365HealthMonitor
             CloudBlobContainer container = blobClient.GetContainerReference("o365healthdata");
 
             logger.LogInformation($"Writing {fileName} to storage");
-            
+
             try
             {
                 await container.CreateIfNotExistsAsync();
@@ -165,6 +169,7 @@ namespace O365HealthMonitor
             string svcResponse = response.Content.ReadAsStringAsync().Result;
 
             messages = JsonConvert.DeserializeObject<Messages>(svcResponse);
+                       
             logger.LogInformation($"Service Message Count {messages.value.Count()}");
             return response;
         }
@@ -197,14 +202,14 @@ namespace O365HealthMonitor
         /// <param name="myTimer"></param>
         /// <param name="log"></param>
         [FunctionName("HealthTrigger")]
-        public static void Run([TimerTrigger("0 */1 * * * *")]TimerInfo myTimer, ILogger log)
+        public static void Run([TimerTrigger("%TimerSchedule%")]TimerInfo myTimer, ILogger log)
         {
-          
+
             logger = log;
             currentBatchNumber = long.Parse(DateTime.UtcNow.ToString("yyyyMMddHHmmss"));
             if (httpClient.BaseAddress == null)
             {
-                httpClient.BaseAddress = new Uri("http://localhost/");
+                httpClient.BaseAddress = new Uri("https://localhost/");
             }
 
             logger.LogInformation("Inside Run");
@@ -229,7 +234,7 @@ namespace O365HealthMonitor
                 System.IO.File.WriteAllText(path + @"\\Data\\LastRun.json", currentBatchNumber.ToString());
             }
             else
-            {                
+            {
                 System.IO.File.WriteAllText(@"D:\\home\\site\\wwwroot\\Data\\LastRun.json", currentBatchNumber.ToString());
             }
 
@@ -239,25 +244,25 @@ namespace O365HealthMonitor
         static void Init()
         {
             try
-            {    
-            logger.LogInformation("Inside Init");
-            // Get the Message Corresponding to last batch from file system
-            if (Environment.GetEnvironmentVariable("Env") == "Dev")
             {
-                lastKnownSvcStatus = JsonConvert.DeserializeObject<CurrentStatus>(System.IO.File.ReadAllText(path + $"\\Data\\CurrentStatus.json"));
-            }
-            else
-            {
-                lastKnownSvcStatus = JsonConvert.DeserializeObject<CurrentStatus>(System.IO.File.ReadAllText($"D:\\home\\site\\wwwroot\\Data\\CurrentStatus.json"));
-            }
+                logger.LogInformation("Inside Init");
+                // Get the Message Corresponding to last batch from file system
+                if (Environment.GetEnvironmentVariable("Env") == "Dev")
+                {
+                    lastKnownSvcStatus = JsonConvert.DeserializeObject<CurrentStatus>(System.IO.File.ReadAllText(path + $"\\Data\\CurrentStatus.json"));
+                }
+                else
+                {
+                    lastKnownSvcStatus = JsonConvert.DeserializeObject<CurrentStatus>(System.IO.File.ReadAllText($"D:\\home\\site\\wwwroot\\Data\\CurrentStatus.json"));
+                }
 
-            logger.LogInformation($"lastKnownSvcStatus {lastKnownSvcStatus}");
+                logger.LogInformation($"lastKnownSvcStatus {lastKnownSvcStatus}");
 
             }
             catch (Exception ex)
             {
                 logger.LogInformation($"Could not load lastKnownSvcStatus {ex.Message}");
-                logger.LogInformation($"lastKnownSvcStatus {ex.StackTrace.ToString()}");                
+                logger.LogInformation($"lastKnownSvcStatus {ex.StackTrace.ToString()}");
             }
         }
 
@@ -277,15 +282,20 @@ namespace O365HealthMonitor
             logger.LogInformation($"Status Message Count {currentSvcStatus.value.Count()}");
             await GetServiceMessage(token);
 
+            NotifyPIR();
 
             //Compare with last known status and notify if needed
             CompareAndNotify();
+
+
+            
+            // notifyTeamsPlanner(messages);
 
             if (Environment.GetEnvironmentVariable("Env") == "Dev")
             {
                 System.IO.File.WriteAllText(path + $"\\Data\\CurrentStatus.json", JsonConvert.SerializeObject(currentSvcStatus));
                 System.IO.File.WriteAllText(path + $"\\Data\\Messages.json", JsonConvert.SerializeObject(messages));
-             }
+            }
             else
             {
                 UploadtoAzureBlobStorage("CurrentStatus.json", JsonConvert.SerializeObject(currentSvcStatus));
@@ -299,18 +309,104 @@ namespace O365HealthMonitor
             }
         }
 
-       
+        private static void NotifyPIR()
+        {
+            CultureInfo provider = CultureInfo.InvariantCulture;
+            // It throws Argument null exception  
+            DateTime dateTime = DateTime.ParseExact(lastBatchNumber.ToString(), "yyyyMMddHHmmss", provider);
+
+            List<MessageValue> lst = messages.value.Where(a => (a.Status == "Post-incident report published" &&  a.LastUpdatedTime.ToUniversalTime() > dateTime)).ToList();
+
+            foreach (var item in lst)
+            {
+                notifyTeamsPIR(item);
+            }
+        }
+
+        static void notifyTeamsPIR(MessageValue message)
+        {
+
+            // My Teams LInk
+            var client = new RestClient(teamsWebhookPIR);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("Connection", "keep-alive");
+            request.AddHeader("accept-encoding", "gzip, deflate");
+            request.AddHeader("Host", "outlook.office.com");
+            request.AddHeader("Cache-Control", "no-cache");
+            request.AddHeader("Accept", "*/*");
+            request.AddHeader("Content-Type", "application/json");
+
+            List<Fact> facts = new List<Fact>();
+            facts.Add(new Fact() { Name = "Title", Value = message.Title });
+            facts.Add(new Fact() { Name = "Id", Value = message.Id });
+            facts.Add(new Fact() { Name = "Severity", Value = message.Severity });
+            facts.Add(new Fact() { Name = "Start Time", Value = message.StartTime.ToString() });
+
+            if (message.EndTime != null)
+            {
+                facts.Add(new Fact() { Name = "End Time", Value = message.EndTime.ToString() });
+            }
+
+            foreach (var item in message.Messages)
+            {
+                facts.Add(new Fact() { Name = item.PublishedTime.ToString(), Value = item.MessageText });
+            }
+
+            Section section = new Section() {
+                ActivityTitle = message.Id + " - " + message.Title,
+                ActivitySubtitle = message.WorkloadDisplayName,
+                ActivityImage = "https://teamsnodesample.azurewebsites.net/static/img/image5.png",
+                Markdown = true,
+                Facts = facts
+            };
+
+            List<Target> targets = new List<Target>();
+            targets.Add(new Target() { Os = "default", Uri = message.PostIncidentDocumentUrl });
+
+            //List<Section> sections = new List<Section>();
+            //sections.Add(section);
+
+            PotentialAction potentialAction = new PotentialAction() { 
+             Type = "OpenUri",
+             Name = "Post Incident Document Url",
+             Targets = targets
+            };
+
+            List<PotentialAction> potentialActions = new List<PotentialAction>() { potentialAction };
+              Root root = new Root(){ 
+               Type = "MessageCard",
+               Context = "http://schema.org/extensions",
+               ThemeColor = "0076D7",
+               Summary = message.Status,
+               Sections = new List<Section>() { section},
+               PotentialAction = new List<PotentialAction>() { potentialAction }
+            };
+
+            request.AddParameter("undefined", JsonConvert.SerializeObject(root) , ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            //if (response.StatusCode != StatusCodes.Status200OK)
+            //{
+                logger.LogInformation(response.ErrorMessage);
+             if (response.ErrorException != null) { 
+                logger.LogInformation(response.ErrorException.ToString());
+            }
+        }
+
         /// <summary>
         /// Compares previous degradations and picksup services degraded
         /// </summary>
         static void CompareAndNotify()
         {
+
             List<FeatureValue> serviceDegraded = new List<FeatureValue>();
 
             foreach (FeatureValue item in currentSvcStatus.value)
             {
                 if (item.FeatureStatus.Where(a => a.FeatureServiceStatus == "ServiceDegradation").Count() > 0)
+                {
                     serviceDegraded.Add(item);
+                }
             }
 
             List<FeatureValue> serviceDegradedNotified = new List<FeatureValue>();
@@ -352,7 +448,7 @@ namespace O365HealthMonitor
                 }
             }
         }
-       
+
         /// <summary>
         /// Method notifies the teams channel provided, when new service degradations occur
         /// </summary>
@@ -364,13 +460,83 @@ namespace O365HealthMonitor
             var request = new RestRequest(Method.POST);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Connection", "keep-alive");
-             request.AddHeader("accept-encoding", "gzip, deflate");
+            request.AddHeader("accept-encoding", "gzip, deflate");
             request.AddHeader("Host", "outlook.office.com");
             request.AddHeader("Cache-Control", "no-cache");
             request.AddHeader("Accept", "*/*");
             request.AddHeader("Content-Type", "application/json");
             request.AddParameter("undefined", "{\r\n  \"@context\": \"https://schema.org/extensions\",\r\n  \"@type\": \"MessageCard\",\r\n  \"themeColor\": \"0072C6\",\r\n  \"title\": \"Service Degradation\",\r\n  \"text\": \"Click **Learn More** to learn more ! <br/>" + message + "\",\r\n  \"potentialAction\": [\r\n    {\r\n      \"@type\": \"OpenUri\",\r\n      \"name\": \"Learn More\",\r\n      \"targets\": [\r\n        { \"os\": \"default\", \"uri\": \"https://admin.microsoft.com/Adminportal/Home?ref=MessageCenter\" }\r\n      ]\r\n    }\r\n  ]\r\n}", ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
+            //if (response.StatusCode != StatusCodes.Status200OK)
+            //{
+            if (response.ErrorException != null)
+            {
+                logger.LogInformation(response.ErrorMessage);
+                logger.LogInformation(response.ErrorException.ToString());
+            }
         }
+
+
+        #region NOT USED
+        static void notifyTeamsPlanner(Messages value)
+        {
+            List<MessageValue> val = value.value;
+
+            //List<CardSection> cardSection = new List<CardSection>();
+            MessageCard card = new MessageCard();
+
+
+            foreach (var item in val)
+            {
+                List<Message> msg = new List<Message>();
+                msg = item.Messages;
+
+                List<CardFacts> facts = new List<CardFacts>();
+
+                foreach (var ite in msg)
+                {
+                    CardFacts fa = new CardFacts()
+                    {
+                        name = ite.PublishedTime.ToString(),
+                        value = ite.MessageText
+                    };
+                    facts.Add(fa);
+                }
+                List<CardSection> cardSection = new List<CardSection>();
+
+                CardSection cardS = new CardSection()
+                {
+                    facts = facts,
+                    text = item.WorkloadDisplayName,
+                    activityTitle = item.FeatureDisplayName,
+                    activitySubtitle = item.Id + " " + item.ImpactDescription
+                };
+
+                cardSection.Add(cardS);
+
+                card = new MessageCard()
+                {
+                    sections = cardSection,
+                    summary = item.Status,
+                    title = item.Title
+                };
+
+                // My Teams LInk
+                var client = new RestClient(teamsWebhook);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("cache-control", "no-cache");
+                request.AddHeader("Connection", "keep-alive");
+                request.AddHeader("accept-encoding", "gzip, deflate");
+                request.AddHeader("Host", "outlook.office.com");
+                request.AddHeader("Cache-Control", "no-cache");
+                request.AddHeader("Accept", "*/*");
+                request.AddHeader("Content-Type", "application/json");
+                request.AddParameter(JsonConvert.SerializeObject(card), ParameterType.RequestBody);
+                IRestResponse response = client.Execute(request);
+            }
+        }
+
+        #endregion
+
     }
 }
