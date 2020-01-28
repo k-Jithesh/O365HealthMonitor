@@ -1,4 +1,4 @@
-# O365HealthMonitor
+# O365 Health Monitor
  
 This sample Azure Function App, monitores for O365 service degradation and notifies to a Teams Channel.
 
