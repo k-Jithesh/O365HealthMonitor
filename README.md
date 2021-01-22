@@ -30,8 +30,10 @@ https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors
 	2. ClientSecret
 	3. Domain
 	4. TeamsWebhookURL
-	5. StorageConnectionString
-	6. Env
+	5. TeamsWebhookPIRURL
+	6. StorageConnectionString
+	7. Env - Set to string other than Dev
+	8. TimerSchedule
 
 ![image](https://user-images.githubusercontent.com/20592381/72153099-ea94f200-33d2-11ea-9699-e2822f6288a6.png)
 
