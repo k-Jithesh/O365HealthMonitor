@@ -46,7 +46,7 @@ namespace O365HealthMonitor
 
         private static readonly string teamsWebhookPIR = Environment.GetEnvironmentVariable("TeamsWebhookPIRURL");
 
-        private static readonly string teamsPlannerWebhook = "";
+        // private static readonly string teamsPlannerWebhook = "";
 
         private static readonly string stgAccountConnection = Environment.GetEnvironmentVariable("StorageConnectionString");
 
